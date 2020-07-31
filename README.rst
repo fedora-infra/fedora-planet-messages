@@ -11,11 +11,12 @@ Testing
 -------
 
 To test this schema you need to create a python virtual environment and install test-requirements.txt.
-See the instructions bellow::
+See the instructions bellow:
 
 .. code-block:: bash
+
    python -m venv .venv
-   . .venv/bin/activate
+   . .venv/bin/activate 
    pip install -r test-requirements.txt
 
 After test environment is created, you can run tests by typing ``tox``.
