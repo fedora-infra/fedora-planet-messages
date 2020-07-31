@@ -1,0 +1,239 @@
+[
+    {
+        "username": "mythcat",
+        "post": {
+            "updated": "2019-11-04T20:36:42.989+02:00",
+            "gd_image": "",
+            "subtitle": "In this tutorial, I will show you how to <i>remove packages without dependency</i>.<br />I have this software named <i>freecad.x86_64</i> and I want to remove it.<br />If I use the <i>dnf</i> tool then I got this output: <br /><pre><code>[root@desk mythcat]# dnf remove freecad.x86_64 <br />Dependencies resolved.<br />==============================================================================<br /> Package                       Arch   Version                  Repo      Size<br />==============================================================================<br />Removing:<br /> freecad                       x86_64 1:0.18.3-5.fc30.1        @updates 141 M<br />Removing unused dependencies:<br /> Coin3                         x86_64 3.1.3-24.fc30            @fedora   11 M<br /> OCE-foundation                x86_64 0.18.3-4.fc30            @fedora   11 M<br /> OCE-modeling                  x86_64 0.18.3-4.fc30            @fedora   58 M<br /> OCE-ocaf                      x86_64 0.18.3-4.fc30            @fedora   11 M<br /> OCE-visualization             x86_64 0.18.3-4.fc30            @fedora  6.7 M<br /> SoQt                          x86_64 1.5.0-26.fc30            @fedora  1.0 M<br /> assimp                        x86_64 3.3.1-19.fc30            @fedora  9.7 M<br /> boost-python3                 x86_64 1.69.0-8.fc30            @updates 473 k<br /> dotconf                       x86_64 1.3-20.fc30              @fedora   61 k<br /> espeak-ng                     x86_64 1.49.2-6.fc30            @fedora  6.6 M<br />...</code></pre>The package is from Nightly FreeCAD, you can enable it if you want to install later:  <br /><pre><code>[root@desk mythcat]# sudo dnf copr enable @freecad/nightly</code></pre>To solve this issue you need to change this file: <br /><pre><code>[root@desk mythcat]# vim /etc/dnf/dnf.conf</code></pre>From <i>clean_requirements_on_remove=True</i> to <i>clean_requirements_on_remove=False</i>.<br />The next commands will fix and remove the package: <br /><pre><code>[root@desk mythcat]# dnf clean all<br />86 files removed<br />[root@desk mythcat]# dnf remove freecad.x86_64 <br />Dependencies resolved.<br />==============================================================================<br /> Package            Architecture Version                 Repository      Size<br />==============================================================================<br />Removing:<br /> freecad            x86_64       1:0.18.3-5.fc30.1       @updates       141 M<br />Removing dependent packages:<br /> freecad-data       noarch       1:0.18.3-5.fc30.1       @updates       194 M<br /><br />Transaction Summary<br />==============================================================================<br />Remove  2 Packages<br /><br />Freed space: 335 M<br />Is this ok [y/N]: <br />...</code></pre>",
+            "published_parsed": 1572892380.0,
+            "links": [
+                {
+                "href": "http://www.blogger.com/feeds/6001440934740961414/posts/default/8513986948420146387",
+                "type": "application/atom+xml",
+                "rel": "edit"
+                },
+                {
+                "href": "http://www.blogger.com/feeds/6001440934740961414/posts/default/8513986948420146387",
+                "type": "application/atom+xml",
+                "rel": "self"
+                },
+                {
+                "href": "http://catalin-festila.blogspot.com/2019/11/fedora-30-how-to-remove-packages.html",
+                "type": "text/html",
+                "rel": "alternate",
+                "title": "Fedora 30 : How to remove packages without dependency."
+                }
+            ],
+            "author": "C\u0103t\u0103lin George Fe\u0219til\u0103 (noreply@blogger.com)",
+            "tags": [
+                {
+                "term": "2019",
+                "scheme": "http://www.blogger.com/atom/ns#",
+                "label": null
+                },
+                {
+                "term": "dnf",
+                "scheme": "http://www.blogger.com/atom/ns#",
+                "label": null
+                },
+                {
+                "term": "Fedora",
+                "scheme": "http://www.blogger.com/atom/ns#",
+                "label": null
+                },
+                {
+                "term": "Fedora 30",
+                "scheme": "http://www.blogger.com/atom/ns#",
+                "label": null
+                },
+                {
+                "term": "linux",
+                "scheme": "http://www.blogger.com/atom/ns#",
+                "label": null
+                },
+                {
+                "term": "linux tools",
+                "scheme": "http://www.blogger.com/atom/ns#",
+                "label": null
+                },
+                {
+                "term": "tutorial",
+                "scheme": "http://www.blogger.com/atom/ns#",
+                "label": null
+                },
+                {
+                "term": "tutorials",
+                "scheme": "http://www.blogger.com/atom/ns#",
+                "label": null
+                }
+            ],
+            "content": [
+                {
+                "base": "http://feeds.feedburner.com/catalin-festila",
+                "type": "text/html",
+                "value": "In this tutorial, I will show you how to <i>remove packages without dependency</i>.<br />I have this software named <i>freecad.x86_64</i> and I want to remove it.<br />If I use the <i>dnf</i> tool then I got this output: <br /><pre><code>[root@desk mythcat]# dnf remove freecad.x86_64 <br />Dependencies resolved.<br />==============================================================================<br /> Package                       Arch   Version                  Repo      Size<br />==============================================================================<br />Removing:<br /> freecad                       x86_64 1:0.18.3-5.fc30.1        @updates 141 M<br />Removing unused dependencies:<br /> Coin3                         x86_64 3.1.3-24.fc30            @fedora   11 M<br /> OCE-foundation                x86_64 0.18.3-4.fc30            @fedora   11 M<br /> OCE-modeling                  x86_64 0.18.3-4.fc30            @fedora   58 M<br /> OCE-ocaf                      x86_64 0.18.3-4.fc30            @fedora   11 M<br /> OCE-visualization             x86_64 0.18.3-4.fc30            @fedora  6.7 M<br /> SoQt                          x86_64 1.5.0-26.fc30            @fedora  1.0 M<br /> assimp                        x86_64 3.3.1-19.fc30            @fedora  9.7 M<br /> boost-python3                 x86_64 1.69.0-8.fc30            @updates 473 k<br /> dotconf                       x86_64 1.3-20.fc30              @fedora   61 k<br /> espeak-ng                     x86_64 1.49.2-6.fc30            @fedora  6.6 M<br />...</code></pre>The package is from Nightly FreeCAD, you can enable it if you want to install later:  <br /><pre><code>[root@desk mythcat]# sudo dnf copr enable @freecad/nightly</code></pre>To solve this issue you need to change this file: <br /><pre><code>[root@desk mythcat]# vim /etc/dnf/dnf.conf</code></pre>From <i>clean_requirements_on_remove=True</i> to <i>clean_requirements_on_remove=False</i>.<br />The next commands will fix and remove the package: <br /><pre><code>[root@desk mythcat]# dnf clean all<br />86 files removed<br />[root@desk mythcat]# dnf remove freecad.x86_64 <br />Dependencies resolved.<br />==============================================================================<br /> Package            Architecture Version                 Repository      Size<br />==============================================================================<br />Removing:<br /> freecad            x86_64       1:0.18.3-5.fc30.1       @updates       141 M<br />Removing dependent packages:<br /> freecad-data       noarch       1:0.18.3-5.fc30.1       @updates       194 M<br /><br />Transaction Summary<br />==============================================================================<br />Remove  2 Packages<br /><br />Freed space: 335 M<br />Is this ok [y/N]: <br />...</code></pre>",
+                "language": null
+                }
+            ],
+            "title_detail": {
+                "base": "http://feeds.feedburner.com/catalin-festila",
+                "type": "text/html",
+                "value": "Fedora 30 : How to remove packages without dependency.",
+                "language": null
+            },
+            "href": "http://www.blogger.com/profile/10800322932529698711",
+            "link": "http://catalin-festila.blogspot.com/2019/11/fedora-30-how-to-remove-packages.html",
+            "published": "2019-11-04T20:33:00.000+02:00",
+            "title": "Fedora 30 : How to remove packages without dependency.",
+            "author_detail": {
+                "href": "http://www.blogger.com/profile/10800322932529698711",
+                "email": "noreply@blogger.com",
+                "name": "C\u0103t\u0103lin George Fe\u0219til\u0103"
+            },
+            "id": "tag:blogger.com,1999:blog-6001440934740961414.post-8513986948420146387",
+            "updated_parsed": 1572892602.0
+        },
+        "name": "mythcat",
+        "face": "http://2.bp.blogspot.com/_bKSzsk0V0BA/SvXOAo1AZ8I/AAAAAAAAC94/LusMuW8HvVA/s400/catalin-fedora.png"
+    },
+    {
+        "username": "admin",
+        "post": {
+            "slash_comments": "0",
+            "updated": "Mon, 04 Nov 2019 08:00:27 +0000",
+            "updated_parsed": 1572854427.0,
+            "links": [
+                {
+                "href": "https://fedoramagazine.org/cloning-a-mac-address-to-bypass-a-captive-portal/",
+                "type": "text/html",
+                "rel": "alternate"
+                },
+                {
+                "length": "11871",
+                "href": "https://fedoramagazine.org/wp-content/uploads/2019/10/clone-mac-nm-300x127.jpg",
+                "type": "image/jpg",
+                "rel": "enclosure"
+                }
+            ],
+            "author": "Esteban Wilson",
+            "tags": [
+                {
+                "term": "Using Software",
+                "scheme": null,
+                "label": null
+                },
+                {
+                "term": "Gaming",
+                "scheme": null,
+                "label": null
+                },
+                {
+                "term": "network",
+                "scheme": null,
+                "label": null
+                },
+                {
+                "term": "networking",
+                "scheme": null,
+                "label": null
+                },
+                {
+                "term": "NetworkManager",
+                "scheme": null,
+                "label": null
+                },
+                {
+                "term": "Privacy",
+                "scheme": null,
+                "label": null
+                },
+                {
+                "term": "Security",
+                "scheme": null,
+                "label": null
+                },
+                {
+                "term": "WiFi",
+                "scheme": null,
+                "label": null
+                },
+                {
+                "term": "wireless",
+                "scheme": null,
+                "label": null
+                }
+            ],
+            "summary_detail": {
+                "base": "http://fedoramagazine.org/feed/",
+                "type": "text/html",
+                "value": "If you ever attach to a WiFi system outside your home or office, you often see a portal page. This page may ask you to accept terms of service or some other agreement to get access. But what happens when you can\u2019t connect through this kind of portal? This article shows you how to use [\u2026]",
+                "language": null
+            },
+            "comments": "https://fedoramagazine.org/cloning-a-mac-address-to-bypass-a-captive-portal/#respond",
+            "summary": "If you ever attach to a WiFi system outside your home or office, you often see a portal page. This page may ask you to accept terms of service or some other agreement to get access. But what happens when you can&#8217;t connect through this kind of portal? This article shows you how to use [&#8230;]",
+            "content": [
+                {
+                "base": "http://fedoramagazine.org/feed/",
+                "type": "text/html",
+                "value": "<p>If you ever attach to a WiFi system outside your home or office, you often see a portal page. This page may ask you to accept terms of service or some other agreement to get access. But what happens when you can\u2019t connect through this kind of portal? This article shows you how to use NetworkManager on Fedora to deal with some failure cases so you can still access the internet.</p>\n\n\n\n<span id=\"more-29537\"></span>\n\n\n\n<h2>How captive portals work</h2>\n\n\n\n<p>Captive portals are web pages offered when a new device is connected to a network. When the user first accesses the Internet, the portal captures all web page requests and redirects them to a single portal page.</p>\n\n\n\n<p>The page then asks the user to take some action, typically agreeing to a usage policy. Once the user agrees, they may authenticate to a RADIUS or other type of authentication system. In simple terms, the captive portal registers and authorizes a device based on the device\u2019s MAC address and end user acceptance of terms. (The MAC address is <a href=\"https://en.wikipedia.org/wiki/MAC_address\">a hardware-based value</a> attached to any network interface, like a WiFi chip or card.)</p>\n\n\n\n<p>Sometimes a device doesn\u2019t load the captive portal to authenticate and authorize the device to use the location\u2019s WiFi access. Examples of this situation include mobile devices and gaming consoles (Switch, Playstation, etc.). They usually won\u2019t launch a captive portal page when connecting to the Internet. You may see this situation when connecting to hotel or public WiFi access points. </p>\n\n\n\n<p>You can use NetworkManager on Fedora to resolve these issues, though. Fedora will let you temporarily clone the connecting device\u2019s MAC address and authenticate to the captive portal on the device\u2019s behalf. You\u2019ll need the MAC address of the device you want to connect. Typically this is printed somewhere on the device and labeled. It\u2019s a six-byte hexadecimal value, so it might look like <em>4A:1A:4C:B0:38:1F</em>. You can also usually find it through the device\u2019s built-in menus.</p>\n\n\n\n<h2>Cloning with NetworkManager</h2>\n\n\n\n<p>First, open <em><strong>nm-connection-editor</strong></em>, or open the WiFI settings via the Settings applet. You can then use NetworkManager to clone as follows:</p>\n\n\n\n<ul><li>For Ethernet \u2013 Select the connected Ethernet connection. Then select the <em>Ethernet</em> tab. Enter the MAC address of the console or other device in the <em>Cloned MAC address</em> field.</li><li>For WiFi \u2013 Select the WiFi profile name. Then select the WiFi tab. Enter the MAC address of the console or other device in the <em>Cloned MAC address</em> field.</li></ul>\n\n\n\n<h2><strong>Bringing up the desired device</strong></h2>\n\n\n\n<p>Once the Fedora system connects with the Ethernet or WiFi profile, the cloned MAC address is used to request an IP address, and the captive portal loads. Enter the credentials needed and/or select the user agreement. The MAC address will then get authorized.</p>\n\n\n\n<p>Now, disconnect the WiFi or Ethernet profile, and boot up the console or other device. The device should now be able to access the Internet, because its network interface has been authorized via your Fedora system.</p>\n\n\n\n<p>This isn\u2019t all that NetworkManager can do, though. For instance, check out this article on <a href=\"https://fedoramagazine.org/randomize-mac-address-nm/\">randomizing your system\u2019s hardware address</a> for better privacy.</p>\n\n\n\n&lt;figure class=\"wp-block-embed-wordpress wp-block-embed is-type-wp-embed is-provider-fedora-magazine\"&gt;<div class=\"wp-block-embed__wrapper\">\n<blockquote class=\"wp-embedded-content\"><a href=\"https://fedoramagazine.org/randomize-mac-address-nm/\">Randomize your MAC address using NetworkManager</a></blockquote>&lt;iframe class=\"wp-embedded-content\" data-secret=\"V7gFe0GI0s\" frameborder=\"0\" height=\"338\" marginheight=\"0\" marginwidth=\"0\" sandbox=\"allow-scripts\" scrolling=\"no\" security=\"restricted\" src=\"https://fedoramagazine.org/randomize-mac-address-nm/embed/#?secret=V7gFe0GI0s\" style=\"position: absolute; clip: rect(1px, 1px, 1px, 1px);\" title=\"\u201cRandomize your MAC address using NetworkManager\u201d \u2014 Fedora Magazine\" width=\"600\"&gt;&lt;/iframe&gt;\n</div>&lt;/figure&gt;",
+                "language": null
+                }
+            ],
+            "guidislink": false,
+            "title_detail": {
+                "base": "http://fedoramagazine.org/feed/",
+                "type": "text/html",
+                "value": "Cloning a MAC address to bypass a captive portal",
+                "language": null
+            },
+            "link": "https://fedoramagazine.org/cloning-a-mac-address-to-bypass-a-captive-portal/",
+            "title": "Cloning a MAC address to bypass a captive portal",
+            "author_detail": {
+                "name": "Esteban Wilson"
+            },
+            "id": "https://fedoramagazine.org/?p=29537",
+            "wfw_commentrss": "https://fedoramagazine.org/cloning-a-mac-address-to-bypass-a-captive-portal/feed/"
+        },
+        "name": "Fedora Magazine",
+        "face": "http://fedoraplanet.org/images-v2/heads/planet-magazine.png"
+    },
+    {
+        "username": "bressers",
+        "post": {
+            "summary_detail": {
+                "base": "https://www.opensourcesecuritypodcast.com/feeds/posts/default?alt=rss",
+                "type": "text/html",
+                "value": "<div class=\"separator\" style=\"clear: both; text-align: center;\"><br /></div><a href=\"https://twitter.com/joshbressers\">Josh</a>\u00a0and <a href=\"https://twitter.com/kurtseifried\">Kurt</a>\u00a0talk\u00a0about the social norms of security. We also discuss security coprocessors and the reasons behind adding them to hardware. Is DRM a draconian security measure or do we need it to secure the future? We also touch on the story of NordVPN getting hacked. The real story isn't they got hacked, the story is they responded like clowns. The actual problem was one of leadership, there are certain leadership skills you can't be taught, you can only learn.<br /><br />&lt;iframe allowfullscreen=\"\" height=\"90\" mozallowfullscreen=\"\" msallowfullscreen=\"\" oallowfullscreen=\"\" scrolling=\"no\" src=\"https://html5-player.libsyn.com/embed/episode/id/11891765/height/90/theme/custom/thumbnail/yes/direction/backward/render-playlist/no/custom-color/6e6a6a/\" style=\"border: none;\" webkitallowfullscreen=\"\" width=\"100%\"&gt;&lt;/iframe&gt; <br /><h3></h3><h3></h3><h3>Show Notes</h3><ul><li><a href=\"https://www.forbes.com/sites/daveywinder/2019/10/25/windows-10-security-microsoft-announces-a-new-before-windows-boots-strategy/#739614d956f2\">Before Windows boots protections</a></li></ul><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div><br /></div><ul><ul></ul></ul><div><a href=\"https://twitter.com/home?status=@joshbressers%20@kurtseifried%20%23osspodcast\" target=\"_blank\">Comment on Twitter with the #osspodcast hashtag</a><br /><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><br /><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"><br /></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; display: none; text-align: center;\"><a href=\"https://1.bp.blogspot.com/-uRZH51Akd5c/XbzQshrqQ_I/AAAAAAAAthQ/zhEKeaZxHEkbTe1fR1Z2Aig6yoMNkiATgCLcBGAsYHQ/s1600/data-security-445154.jpg\" style=\"margin-left: 1em; margin-right: 1em;\"><img border=\"0\" height=\"240\" src=\"https://1.bp.blogspot.com/-uRZH51Akd5c/XbzQshrqQ_I/AAAAAAAAthQ/zhEKeaZxHEkbTe1fR1Z2Aig6yoMNkiATgCLcBGAsYHQ/s320/data-security-445154.jpg\" width=\"320\" /></a></div><div class=\"separator\" style=\"clear: both; text-align: center;\"><br /></div></div>",
+                "language": null
+            },
+            "updated_parsed": 1572825600.0,
+            "links": [
+                {
+                "href": "http://www.opensourcesecuritypodcast.com/2019/11/episode-168-draconian-draconians-of-drm.html",
+                "type": "text/html",
+                "rel": "alternate"
+                }
+            ],
+            "author": "noreply@blogger.com (Josh Bressers)",
+            "title": "Episode 168 - The draconian draconians of DRM",
+            "updated": "2019-11-03T16:00:06.484-08:00",
+            "media_thumbnail": "",
+            "summary": "<div class=\"separator\" style=\"clear: both; text-align: center;\"><br /></div><a href=\"https://twitter.com/joshbressers\">Josh</a>&nbsp;and <a href=\"https://twitter.com/kurtseifried\">Kurt</a>&nbsp;talk&nbsp;about the social norms of security. We also discuss security coprocessors and the reasons behind adding them to hardware. Is DRM a draconian security measure or do we need it to secure the future? We also touch on the story of NordVPN getting hacked. The real story isn't they got hacked, the story is they responded like clowns. The actual problem was one of leadership, there are certain leadership skills you can't be taught, you can only learn.<br /><br /><!-- iframe --><iframe allowfullscreen=\"\" height=\"90\" mozallowfullscreen=\"\" msallowfullscreen=\"\" oallowfullscreen=\"\" scrolling=\"no\" src=\"//html5-player.libsyn.com/embed/episode/id/11891765/height/90/theme/custom/thumbnail/yes/direction/backward/render-playlist/no/custom-color/6e6a6a/\" style=\"border: none;\" webkitallowfullscreen=\"\" width=\"100%\"></iframe> <br /><h3></h3><h3></h3><h3>Show Notes</h3><ul><li><a href=\"https://www.forbes.com/sites/daveywinder/2019/10/25/windows-10-security-microsoft-announces-a-new-before-windows-boots-strategy/#739614d956f2\">Before Windows boots protections</a></li></ul><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div><br /></div><ul><ul></ul></ul><div><a href=\"https://twitter.com/home?status=@joshbressers%20@kurtseifried%20%23osspodcast\" target=\"_blank\">Comment on Twitter with the #osspodcast hashtag</a><br /><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><br /><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"><br /></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; text-align: center;\"></div><div class=\"separator\" style=\"clear: both; display: none; text-align: center;\"><a href=\"https://1.bp.blogspot.com/-uRZH51Akd5c/XbzQshrqQ_I/AAAAAAAAthQ/zhEKeaZxHEkbTe1fR1Z2Aig6yoMNkiATgCLcBGAsYHQ/s1600/data-security-445154.jpg\" imageanchor=\"1\" style=\"margin-left: 1em; margin-right: 1em;\"><img border=\"0\" data-original-height=\"1200\" data-original-width=\"1600\" height=\"240\" src=\"https://1.bp.blogspot.com/-uRZH51Akd5c/XbzQshrqQ_I/AAAAAAAAthQ/zhEKeaZxHEkbTe1fR1Z2Aig6yoMNkiATgCLcBGAsYHQ/s320/data-security-445154.jpg\" width=\"320\" /></a></div><div class=\"separator\" style=\"clear: both; text-align: center;\"><br /></div></div>",
+            "guidislink": false,
+            "title_detail": {
+                "base": "https://www.opensourcesecuritypodcast.com/feeds/posts/default?alt=rss",
+                "type": "text/html",
+                "value": "Episode 168 - The draconian draconians of DRM",
+                "language": null
+            },
+            "link": "http://www.opensourcesecuritypodcast.com/2019/11/episode-168-draconian-draconians-of-drm.html",
+            "author_detail": {
+                "email": "noreply@blogger.com",
+                "name": "Josh Bressers"
+            },
+            "id": "tag:blogger.com,1999:blog-8551368290788936147.post-2132028895086904633"
+        },
+        "name": "Open Source Security Podcast",
+        "face": "http://fedoraplanet.org/images-v2/heads/default.png"
+    }
+]
