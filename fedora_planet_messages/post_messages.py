@@ -42,9 +42,17 @@ class PostNew(message.Message):
         return self.body.get("name", None)
 
     @property
-    def username(self):
+    def agent_name(self):
         """User that did the action."""
         return self.body.get("username", None)
+
+    @property
+    def username(self):
+        return self.agent_name
+
+    @property
+    def usernames(self):
+        return [self.agent_name] if self.agent_name is not None else []
 
     @property
     def post_title(self):

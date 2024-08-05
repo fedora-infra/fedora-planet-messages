@@ -43,13 +43,17 @@ class TestPostNew(unittest.TestCase):
         """Assert that username is returned."""
         self.message.body = {"username": "Khorne"}
 
+        self.assertEqual(self.message.agent_name, "Khorne")
         self.assertEqual(self.message.username, "Khorne")
+        self.assertEqual(self.message.usernames, ["Khorne"])
 
     def test_username_missing(self):
         """Assert that None is returned when username is missing."""
         self.message.body = {}
 
+        self.assertEqual(self.message.agent_name, None)
         self.assertEqual(self.message.username, None)
+        self.assertEqual(self.message.usernames, [])
 
     def test_post_title(self):
         """Assert that post title is returned."""
