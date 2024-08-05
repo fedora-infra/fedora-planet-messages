@@ -33,7 +33,7 @@ class ExistingMessagesTests(unittest.TestCase):
     def test_valid(self):
         message.load_message_classes()
         for message_class, name in message._class_to_schema_name.items():
-            if not message_class.topic or not name.startswith("anitya"):
+            if not message_class.topic or not name.startswith("planet"):
                 continue
 
             fixture = os.path.join(FIXTURES_DIR, message_class.topic + ".json")

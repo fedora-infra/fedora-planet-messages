@@ -22,7 +22,7 @@ def get_fixtures(timeout):
     message.load_message_classes()
 
     for message_class, name in message._class_to_schema_name.items():
-        if not message_class.topic or not name.startswith("anitya"):
+        if not message_class.topic or not name.startswith("planet"):
             print("Skipping {}".format(message_class))
             continue
 
