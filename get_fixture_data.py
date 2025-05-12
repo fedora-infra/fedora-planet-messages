@@ -11,9 +11,9 @@ import click
 
 from fedora_messaging import message
 
-from fedora_planet_messages.tests import FIXTURES_DIR
-
 import requests
+
+from tests import FIXTURES_DIR
 
 
 @click.command()

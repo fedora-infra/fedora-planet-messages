@@ -8,3 +8,5 @@ htmlcov/
 *.pyc
 __pycache__/
 .tox
+build
+dist

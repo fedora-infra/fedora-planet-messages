@@ -47,13 +47,11 @@ setup(
     maintainer_email="infrastructure@lists.fedoraproject.org",
     platforms=["Fedora", "GNU/Linux"],
     keywords="fedora",
-    packages=find_packages(
-        exclude=("fedora_planet_messages.tests", "fedora_planet_messages.tests.*")
-    ),
+    packages=find_packages(exclude=("tests", "tests.*")),
     include_package_data=True,
     zip_safe=False,
     install_requires=["fedora_messaging"],
-    test_suite="fedora_planet_messages.tests",
+    test_suite="tests",
     entry_points={
         "fedora.messages": [
             "planet.build=fedora_planet_messages:Build",
