@@ -21,7 +21,7 @@ from fedora_messaging import message
 class PostNew(message.Message):
     """The message sent when a new post is published in planet."""
 
-    topic = "org.fedoraproject.prod.planet.post.new"
+    topic = "planet.post.new"
     body_schema = {
         "id": "https://fedoraproject.org/jsonschema/planet_post_new1.json",
         "$schema": "http://json-schema.org/draft-04/schema#",
