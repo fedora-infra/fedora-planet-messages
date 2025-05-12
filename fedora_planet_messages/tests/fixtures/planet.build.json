@@ -1,0 +1,56 @@
+[
+   {
+      "Users" : {
+         "community-blog" : {
+            "author" : "admin",
+            "avatar" : "https://fedoraplanet.org/images-v2/heads/default.png",
+            "feed" : "https://communityblog.fedoraproject.org/?feed=rss",
+            "link" : "https://communityblog.fedoraproject.org",
+            "name" : "Fedora Community Blog"
+         },
+         "fche_1" : {
+            "author" : "fche",
+            "avatar" : "https://www.libravatar.org/avatar/00bcd313424fe1054b7d0fc144b6d6a9",
+            "feed" : "https://web.elastic.org/~fche/blog4/tags/tech/index.rss",
+            "name" : "Frank Ch. Eigler"
+         },
+         "fedora-badges" : {
+            "author" : "admin",
+            "avatar" : "https://fedoraplanet.org/images-v2/heads/default.png",
+            "feed" : "https://badges.fedoraproject.org/explore/badges/rss",
+            "link" : "https://badges.fedoraproject.org",
+            "name" : "Fedora Badges"
+         },
+         "fedora-status" : {
+            "author" : "admin",
+            "avatar" : "https://fedoraplanet.org/images-v2/heads/default.png",
+            "feed" : "https://status.fedoraproject.org/changes.rss",
+            "link" : "https://status.fedoraproject.org",
+            "name" : "Fedora Infrastructure Status"
+         },
+         "fedoramagazine" : {
+            "author" : "admin",
+            "avatar" : "https://fedoraplanet.org/images-v2/heads/planet-magazine.png",
+            "feed" : "https://fedoramagazine.org/?feed=rss2",
+            "link" : "https://fedoramagazine.org",
+            "name" : "Fedora Magazine"
+         },
+         "fedorauniversity" : {
+            "author" : "admin",
+            "avatar" : "https://fedoraplanet.org/images-v2/heads/default.png",
+            "feed" : "https://fedorauniversity.wordpress.com/feed/",
+            "link" : "https://fedorauniversity.wordpress.com",
+            "name" : "Fedora University Tour"
+         },
+         "kevin_1" : {
+            "author" : "kevin",
+            "avatar" : "https://www.libravatar.org/avatar/7bf49ba12a0e605186515afd83379fcb",
+            "feed" : "https://www.scrye.com/blogs/nirik/categories/fedora.atom",
+            "link" : "https://www.scrye.com/blogs/nirik",
+            "name" : "Kevin Fenzi"
+         }
+      },
+      "title" : "Test Planet",
+      "url" : "planet.http://example.com"
+   }
+]

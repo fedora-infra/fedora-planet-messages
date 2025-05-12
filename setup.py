@@ -55,6 +55,9 @@ setup(
     install_requires=["fedora_messaging"],
     test_suite="fedora_planet_messages.tests",
     entry_points={
-        "fedora.messages": ["planet.post.new=fedora_planet_messages:PostNew"]
+        "fedora.messages": [
+            "planet.build=fedora_planet_messages:Build",
+            "planet.post.new=fedora_planet_messages:PostNew",
+        ]
     },
 )
