@@ -37,8 +37,8 @@ class ExistingMessagesTests(unittest.TestCase):
                 continue
 
             fixture = os.path.join(FIXTURES_DIR, message_class.topic + ".json")
-            with self.subTest(msg="Validating {} with {} failed".format(name, fixture)):
-                with open(fixture, "r") as fp:
+            with self.subTest(msg=f"Validating {name} with {fixture} failed"):
+                with open(fixture) as fp:
                     messages = json.load(fp)
 
                 for m in messages:

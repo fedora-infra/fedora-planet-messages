@@ -8,10 +8,8 @@ import json
 import os
 
 import click
-
-from fedora_messaging import message
-
 import requests
+from fedora_messaging import message
 
 from tests import FIXTURES_DIR
 
@@ -23,7 +21,7 @@ def get_fixtures(timeout):
 
     for message_class, name in message._class_to_schema_name.items():
         if not message_class.topic or not name.startswith("planet"):
-            print("Skipping {}".format(message_class))
+            print(f"Skipping {message_class}")
             continue
 
         try:
@@ -36,9 +34,7 @@ def get_fixtures(timeout):
             print("Datagrepper timed out, maybe there aren't any recent results")
             continue
         if resp.status_code != 200:
-            print(
-                "Failed to communicate with datagrepper ({})".format(resp.status_code)
-            )
+            print(f"Failed to communicate with datagrepper ({resp.status_code})")
             continue
 
         path = os.path.join(FIXTURES_DIR, message_class.topic + ".json")

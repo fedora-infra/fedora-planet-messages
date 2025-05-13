@@ -1,0 +1,32 @@
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "S", "B", "RUF"]
+# ignore = ["RUF010", "UP038"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "F401", "E501"]
+"fedora_planet_messages/__init__.py" = ["F401"]
+
+[tool.coverage.run]
+branch = true
+source = [
+    "fedora_planet_messages",
+]
+
+[tool.coverage.report]
+# fail_under = 100
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "def __repr__",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+]
+omit = [
+    "tests/*",
+]

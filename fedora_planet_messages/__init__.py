@@ -14,5 +14,5 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-from .build import Build  # noqa: F401
-from .post_messages import PostNew  # noqa: F401
+from .build import Build
+from .post_messages import PostNew

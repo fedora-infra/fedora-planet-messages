@@ -15,6 +15,8 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 """The schema for post-related messages sent by planet."""
 
+import typing
+
 from fedora_messaging import message
 
 
@@ -22,7 +24,7 @@ class PostNew(message.Message):
     """The message sent when a new post is published in planet."""
 
     topic = "planet.post.new"
-    body_schema = {
+    body_schema: typing.ClassVar = {
         "id": "https://fedoraproject.org/jsonschema/planet_post_new1.json",
         "$schema": "http://json-schema.org/draft-04/schema#",
         "description": "Message sent when a new post is published on planet",
@@ -67,9 +69,7 @@ class PostNew(message.Message):
     @property
     def summary(self):
         """Return a summary of the message."""
-        return "A new post '{}' was published on planet by '{}'.".format(
-            self.post_title, self.username
-        )
+        return f"A new post '{self.post_title}' was published on planet by '{self.username}'."
 
     def __str__(self):
         """

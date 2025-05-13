@@ -15,6 +15,8 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 """The schema for build-related messages sent by planet."""
 
+import typing
+
 from fedora_messaging import message
 
 
@@ -22,7 +24,7 @@ class Build(message.Message):
     """The message sent when a new post is published in planet."""
 
     topic = "planet.build"
-    body_schema = {
+    body_schema: typing.ClassVar = {
         "id": "https://fedoraproject.org/jsonschema/planet_build.json",
         "$schema": "http://json-schema.org/draft-04/schema#",
         "description": "Message sent when the planet is built",
