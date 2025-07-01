@@ -26,7 +26,7 @@ with open(os.path.join(here, "README.rst")) as fd:
 
 setup(
     name="fedora-planet-messages",
-    version="1.2.0",
+    version="1.2.1",
     description="JSON schema definitions for messages published by Fedora planet",
     long_description=README,
     url="https://github.com/fedora-infra/fedora-planet-messages",
@@ -40,6 +40,7 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
     ],
     license="GPLv2+",
     maintainer="Fedora Infrastructure Team",
