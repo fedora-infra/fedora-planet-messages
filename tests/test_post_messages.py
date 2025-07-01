@@ -67,6 +67,14 @@ class TestPostNew(unittest.TestCase):
 
         self.assertEqual(self.message.post_title, None)
 
+    def test_post_title_none(self):
+        """Assert that the post title can be None."""
+        self.message.body = {"username": "Khorne", "post": {"title": None}}
+        self.message.validate()
+        self.assertEqual(self.message.post_title, None)
+        exp = "A new post was published on planet by 'Khorne'."
+        self.assertEqual(self.message.__str__(), exp)
+
     def test_face(self):
         """Assert that URL to avatar is returned."""
         self.message.body = {"face": "https://face.com"}
@@ -105,6 +113,6 @@ class TestPostNew(unittest.TestCase):
         """Assert that correct summary string is returned when the properties are missing."""
         self.message.body = {"post": {}}
 
-        exp = "A new post 'None' was published on planet by 'None'."
+        exp = "A new post was published on planet."
 
         self.assertEqual(self.message.__str__(), exp)

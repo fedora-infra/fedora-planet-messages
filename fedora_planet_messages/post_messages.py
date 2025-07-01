@@ -34,7 +34,7 @@ class PostNew(message.Message):
             "username": {"type": "string"},
             "face": {"type": "string"},
             "name": {"type": "string"},
-            "post": {"type": "object", "properties": {"title": {"type": "string"}}},
+            "post": {"type": "object", "properties": {"title": {"type": ["string", "null"]}}},
         },
     }
 
@@ -69,7 +69,13 @@ class PostNew(message.Message):
     @property
     def summary(self):
         """Return a summary of the message."""
-        return f"A new post '{self.post_title}' was published on planet by '{self.username}'."
+        value = ["A new post"]
+        if self.post_title is not None:
+            value.append(repr(self.post_title))
+        value.append("was published on planet")
+        if self.username is not None:
+            value.extend(["by", repr(self.username)])
+        return " ".join(value) + "."
 
     def __str__(self):
         """
